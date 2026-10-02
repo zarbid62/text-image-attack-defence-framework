@@ -243,8 +243,15 @@ The repository includes generated examples that make the evaluation process insp
 - [Image model comparison dashboard](aegisai_text_injection_test/image_injection_test/results/image_model_comparison_dashboard.html)
 - [Layered defense attack catalog](aegisai_text_injection_test/image_injection_test/results/LAYERED_DEFENSE_ATTACK_CATALOG.md)
 - [Latest image run report](aegisai_text_injection_test/image_injection_test/results/IMAGE_TEST_RUN_REPORT.md)
+- [AI security project portfolio PDF](AI_SECURITY_PROJECT_PORTFOLIO.pdf)
+- [Editable portfolio source](AI_SECURITY_PROJECT_PORTFOLIO.html)
+- [LinkedIn project presentation PDF](LINKEDIN_PROJECT_PRESENTATION.pdf)
+- [LinkedIn presentation source](LINKEDIN_PROJECT_PRESENTATION.html)
+- [LinkedIn post text](LINKEDIN_POST.md)
 
 The included image sweep is intentionally presented as a diagnostic sample, not as a universal benchmark. Its latest report documents eight attack types, model latency, detected attacks, bypasses, and limitations.
+
+The [project portfolio PDF](aegisai_text_injection_test/results/AI_SECURITY_PROJECT_PORTFOLIO.pdf) is prepared for scholarship applications, CV/resume attachments, interviews, and project demonstrations. It includes a short project summary, technical architecture, evidence links, interview presentation script, scholarship statement, career-focused skills, and a future research roadmap. Regenerate it with `python src/generate_project_portfolio_pdf.py` from `aegisai_text_injection_test`.
 
 ## Documentation Guide
 

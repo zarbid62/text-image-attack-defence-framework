@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AegisAI Project Portfolio</title>
+<style>
+  :root { --ink:#17212b; --muted:#5d6b75; --teal:#087f8c; --blue:#315c9e; --coral:#b94b3e; --paper:#f5f7f8; --line:#d9e1e5; --pale:#eaf4f3; }
+  * { box-sizing:border-box; }
+  @page { size:A4; margin:17mm 16mm 16mm; }
+  body { margin:0; color:var(--ink); background:#e9eef0; font:10.5pt/1.48 "Segoe UI", Arial, sans-serif; }
+  main { max-width:900px; margin:0 auto; background:white; }
+  .page { padding:24mm 18mm 18mm; min-height:270mm; page-break-after:always; position:relative; }
+  .page:last-child { page-break-after:auto; }
+  .cover { display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(145deg,#f7fbfb 0%,#fff 52%,#edf2f7 100%); }
+  .eyebrow { color:var(--teal); font-size:10pt; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+  h1 { font:700 35pt/1.04 Georgia, serif; margin:20mm 0 6mm; letter-spacing:0; }
+  h2 { color:var(--ink); font:700 21pt/1.12 Georgia, serif; margin:0 0 7mm; padding-bottom:3mm; border-bottom:2px solid var(--teal); }
+  h3 { color:var(--blue); font-size:13pt; margin:7mm 0 2mm; }
+  p { margin:0 0 4mm; }
+  .lead { color:var(--muted); font-size:14pt; line-height:1.45; max-width:170mm; }
+  .tagline { border-left:4px solid var(--teal); background:var(--pale); padding:5mm 6mm; margin:10mm 0; font-size:12pt; }
+  .meta { color:var(--muted); }
+  .footer { position:absolute; bottom:9mm; left:18mm; right:18mm; color:var(--muted); font-size:8.5pt; border-top:1px solid var(--line); padding-top:2mm; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .card { border:1px solid var(--line); border-radius:6px; padding:4mm; background:#fff; break-inside:avoid; }
+  .card strong { display:block; color:var(--teal); margin-bottom:1mm; }
+  ul, ol { margin:2mm 0 5mm 6mm; padding-left:5mm; }
+  li { margin:1.5mm 0; }
+  .pill { display:inline-block; background:#eef3f5; color:var(--blue); border-radius:3px; padding:1.5mm 2.5mm; margin:1mm 1mm 1mm 0; font-size:9pt; }
+  .callout { border-left:4px solid var(--coral); background:#fff4f1; padding:4mm 5mm; margin:5mm 0; break-inside:avoid; }
+  .code { background:#17212b; color:#f4f7f8; padding:4mm; border-radius:4px; font:9pt/1.45 Consolas, monospace; white-space:pre-wrap; }
+  table { width:100%; border-collapse:collapse; margin:3mm 0 5mm; font-size:9.5pt; }
+  th { background:#264653; color:#fff; text-align:left; }
+  th, td { padding:2.5mm; border:1px solid var(--line); vertical-align:top; }
+  tr:nth-child(even) td { background:#f7f9fa; }
+  .quote { font-size:12pt; font-style:italic; color:#334e5b; padding:4mm 5mm; background:#f1f6f7; border-radius:5px; }
+  a { color:var(--blue); text-decoration:none; }
+  .small { color:var(--muted); font-size:9pt; }
+  .no-break { break-inside:avoid; }
+  @media print { body { background:#fff; } main { max-width:none; } a { color:inherit; text-decoration:none; } .page { min-height:0; } }
+</style>
+</head>
+<body>
+<main>
+<section class="page cover">
+  <div>
+    <div class="eyebrow">AI Security Research and Engineering Portfolio</div>
+    <h1>AegisAI Text and Image Prompt-Injection Defense Framework</h1>
+    <p class="lead">A reproducible security evaluation framework for testing how AI systems distinguish trusted instructions from untrusted content embedded in text, images, OCR transcripts, and other data sources.</p>
+    <div class="tagline"><strong>Project thesis:</strong> AI systems should classify untrusted content as evidence, not silently promote it to a trusted instruction.</div>
+    <div class="grid">
+      <div class="card"><strong>Research focus</strong>Prompt injection, LLM safety, multimodal AI, agent boundaries, and responsible evaluation.</div>
+      <div class="card"><strong>Engineering focus</strong>Python CLI systems, model adapters, CPU experiments, structured results, and automated reporting.</div>
+    </div>
+  </div>
+  <div>
+    <p class="meta"><strong>Prepared for:</strong> European scholarship applications, AI security roles, ML engineering roles, and research interviews</p>
+    <p class="meta"><strong>Repository:</strong> <a href="https://github.com/zarbid62/text-image-attack-defence-framework">github.com/zarbid62/text-image-attack-defence-framework</a></p>
+  </div>
+  <div class="footer">AegisAI Project Portfolio | Research prototype | Results should be interpreted with the documented limitations.</div>
+</section>
+
+<section class="page">
+  <h2>1. Executive Summary</h2>
+  <p>Prompt injection is a security problem in which text, images, OCR output, documents, or tool responses contain instructions that attempt to redirect an AI system away from its trusted task. This project turns that problem into a repeatable evaluation workflow.</p>
+  <p>The framework contains versioned attack and benign corpora, deterministic undefended and defended agents, a transparent detector, multimodal image testing, local and hosted model adapters, CPU-only profiles, and structured reporting.</p>
+  <h3>What the project proves</h3>
+  <ul>
+    <li>Untrusted content can be tested as a security boundary rather than treated as ordinary input.</li>
+    <li>Defense quality can be compared using explicit metrics such as detection, bypass, accuracy, false positives, errors, confidence, and latency.</li>
+    <li>Low-cost CPU experiments can produce useful and reproducible evidence without GPU infrastructure.</li>
+    <li>Security evaluation is stronger when bypasses and limitations are preserved instead of hidden.</li>
+  </ul>
+  <h3>Why it is valuable as a portfolio project</h3>
+  <div class="grid">
+    <div class="card"><strong>AI engineering</strong>Integrates prompts, models, agents, multimodal inputs, data contracts, and reports into one working system.</div>
+    <div class="card"><strong>Security research</strong>Defines attack categories, trust boundaries, defense layers, measurement criteria, and responsible-use limits.</div>
+    <div class="card"><strong>Reproducibility</strong>Stores commands, run IDs, prompts, configurations, latency, errors, and historical outputs.</div>
+    <div class="card"><strong>Accessibility</strong>Provides CPU profiles that make the experiment repeatable on ordinary laptops.</div>
+  </div>
+  <div class="callout"><strong>Accurate claim to make:</strong> This is a research and evaluation framework. It measures model and defense behavior; it does not claim to eliminate prompt injection or guarantee production security.</div>
+  <div class="footer">AegisAI Project Portfolio | Executive summary</div>
+</section>
+
+<section class="page">
+  <h2>2. How the System Works</h2>
+  <div class="code">Attack corpus or custom image set
+              + trusted review prompt
+              + attack/defense prompt library
+                              |
+                              v
+                    Input and prompt loader
+                              |
+          +-------------------+-------------------+
+          |                   |                   |
+          v                   v                   v
+   Undefended agent   Transparent detector   Model adapters
+          |                   |                   |
+          +-------------------+-------------------+
+                              v
+                 Comparable evaluation records
+                              |
+       +------------------+---+---+------------------+
+       |                  |       |                  |
+       v                  v       v                  v
+   JSON / CSV       HTML dashboard  Office reports  History archive</div>
+  <h3>Execution flow</h3>
+  <ol>
+    <li><strong>Bootstrap:</strong> checks Python and Node.js, installs missing declared packages, and prepares the selected command.</li>
+    <li><strong>Load data:</strong> reads a versioned text corpus, image corpus, local folder, JSON manifest, or HTTP(S) manifest.</li>
+    <li><strong>Establish trust boundaries:</strong> keeps the trusted review task separate from OCR, image text, documents, and other untrusted evidence.</li>
+    <li><strong>Run baselines:</strong> compares an undefended agent with a defended pipeline.</li>
+    <li><strong>Detect attacks:</strong> scores overrides, forged authority, role changes, tool calls, urgency, exfiltration, and related patterns.</li>
+    <li><strong>Evaluate models:</strong> sends consistent inputs to Ollama, OpenAI, Anthropic, Gemini, Hugging Face, or compatible local APIs.</li>
+    <li><strong>Report results:</strong> writes structured records and generates dashboards, catalogs, and office documents.</li>
+  </ol>
+  <h3>Technologies used</h3>
+  <p><span class="pill">Python</span><span class="pill">Node.js</span><span class="pill">Ollama</span><span class="pill">LLMs</span><span class="pill">Vision-language models</span><span class="pill">AI agents</span><span class="pill">Prompt engineering</span><span class="pill">Threat modeling</span><span class="pill">JSON/CSV</span><span class="pill">HTML reporting</span><span class="pill">CPU evaluation</span></p>
+  <div class="footer">AegisAI Project Portfolio | System mechanism</div>
+</section>
+
+<section class="page">
+  <h2>3. Research and Evaluation Design</h2>
+  <h3>Attack surface</h3>
+  <table>
+    <tr><th>Attack family</th><th>What it tests</th></tr>
+    <tr><td>Direct override</td><td>Whether the model obeys an instruction to ignore the trusted task.</td></tr>
+    <tr><td>Forged authority</td><td>Whether labels such as system, admin, or supervisor improperly change priority.</td></tr>
+    <tr><td>Delimiter escape</td><td>Whether fake document boundaries can impersonate trusted context.</td></tr>
+    <tr><td>Role-play and urgency</td><td>Whether fictional framing or emergency pressure bypasses verification.</td></tr>
+    <tr><td>Fake tool response</td><td>Whether untrusted text can imitate a trusted tool result or next action.</td></tr>
+    <tr><td>Exfiltration</td><td>Whether the system follows requests to export logs, secrets, or process data.</td></tr>
+    <tr><td>Polite low-signal attack</td><td>Whether subtle language avoids detection because it does not look aggressive.</td></tr>
+  </table>
+  <h3>Measured outcomes</h3>
+  <ul>
+    <li>Attack detection and attack bypass rate.</li>
+    <li>Overall accuracy and benign handling.</li>
+    <li>False positives and human-review holds.</li>
+    <li>Model confidence, provider errors, image errors, and request latency.</li>
+    <li>Per-sample prompts, model responses, run IDs, and configuration metadata.</li>
+  </ul>
+  <h3>CPU-first experiment</h3>
+  <p>The CPU workflow is deliberately small and sequential. The `8gb` profile uses Moondream, one sample, and a 300-second timeout; the `16gb` profile uses Qwen 2.5 VL with two samples; the larger profile uses LLaVA with four samples and a longer timeout.</p>
+  <p>This design is valuable for scholarship and research evaluation because it makes the work accessible, controlled, and replicable without presenting a small test as a universal benchmark.</p>
+  <div class="footer">AegisAI Project Portfolio | Research design</div>
+</section>
+
+<section class="page">
+  <h2>4. Evidence and Reproducibility</h2>
+  <h3>What a reviewer can inspect</h3>
+  <ul>
+    <li>Versioned text and image injection corpora.</li>
+    <li>Transparent detector rules and decision thresholds.</li>
+    <li>Undefended versus defended agent behavior.</li>
+    <li>Model catalogs and provider adapters.</li>
+    <li>CPU-only commands and low-memory test profiles.</li>
+    <li>Machine-readable JSON/CSV results and offline HTML dashboards.</li>
+    <li>Generated Markdown, DOCX, PDF, and PowerPoint reports.</li>
+    <li>Historical results preserved by run ID.</li>
+  </ul>
+  <h3>Reproduction commands</h3>
+  <div class="code"># Windows
+.\run.cmd --check
+.\run.cmd python image_injection_test\src\run_tests.py --cpu-only --cpu-profile 8gb --defense-mode both --defense-prompt-id layered_defense
+
+# macOS / Linux
+./run.sh --check
+./run.sh python image_injection_test/src/run_tests.py --cpu-only --cpu-profile 8gb --defense-mode both --defense-prompt-id layered_defense</div>
+  <h3>Important evidence links</h3>
+  <ul>
+    <li><a href="https://github.com/zarbid62/text-image-attack-defence-framework">GitHub repository</a></li>
+    <li><a href="https://github.com/zarbid62/text-image-attack-defence-framework/blob/main/README.md">Main technical README</a></li>
+    <li><a href="https://github.com/zarbid62/text-image-attack-defence-framework/blob/main/aegisai_text_injection_test/image_injection_test/cpu_based_image_test/README.md">CPU image testing guide</a></li>
+    <li><a href="https://github.com/zarbid62/text-image-attack-defence-framework/blob/main/aegisai_text_injection_test/image_injection_test/README_ATTACK_DEFENSE.md">Attack and defense guide</a></li>
+  </ul>
+  <div class="callout"><strong>Presentation principle:</strong> show the command, the input, the defense condition, the metric, and the limitation. This turns a software demo into an auditable experiment.</div>
+  <div class="footer">AegisAI Project Portfolio | Evidence</div>
+</section>
+
+<section class="page">
+  <h2>5. Resume and CV Presentation</h2>
+  <h3>One-line CV description</h3>
+  <p class="quote">Built a cross-platform AI security framework that evaluates text and image prompt injection across LLMs and vision models using reproducible corpora, defended agent simulations, CPU-based testing, and explainable reports.</p>
+  <h3>Resume entry</h3>
+  <p><strong>AegisAI Text and Image Prompt-Injection Defense Framework</strong><br><span class="small">AI Security Research Project | Python, LLMs, Multimodal AI, Ollama, Node.js</span></p>
+  <ul>
+    <li>Developed a reproducible framework for testing whether LLMs and vision-language models distinguish trusted instructions from untrusted text, OCR, and image content.</li>
+    <li>Implemented undefended and defended AI-agent simulations with transparent `allow`, `hold`, and `block` security decisions.</li>
+    <li>Designed attack scenarios covering instruction overrides, forged authority, role-play jailbreaks, fake tool responses, urgency manipulation, and data exfiltration.</li>
+    <li>Integrated local and hosted model providers and created CPU-only evaluation profiles for low-resource environments.</li>
+    <li>Generated structured JSON/CSV records and offline HTML, Markdown, DOCX, PDF, and PowerPoint reports with latency, confidence, errors, and historical run metadata.</li>
+  </ul>
+  <h3>Skills line</h3>
+  <p>AI Engineering | LLM Evaluation | AI Agents | Multimodal AI | Prompt Engineering | AI Security | Threat Modeling | Python | Node.js | Ollama | Model Benchmarking | Reproducible Research</p>
+  <h3>What not to claim</h3>
+  <p>Do not say the project eliminates prompt injection or proves that a model is secure. Say that it evaluates defenses, measures bypasses, documents limitations, and provides evidence for follow-up research.</p>
+  <div class="footer">AegisAI Project Portfolio | CV presentation</div>
+</section>
+
+<section class="page">
+  <h2>6. Interview Presentation Method</h2>
+  <p>Use a clear five-part structure. Keep the first explanation under two minutes, then offer technical depth if the interviewer wants it.</p>
+  <ol>
+    <li><strong>Problem:</strong> “AI systems may treat instructions inside an image or document as trusted commands.”</li>
+    <li><strong>Approach:</strong> “I created controlled attack corpora and compared undefended and defended agents across text and image inputs.”</li>
+    <li><strong>Engineering:</strong> “The system uses Python for evaluation and detection, model adapters for local and hosted LLMs, Node.js for reports, and CPU profiles for low-cost reproduction.”</li>
+    <li><strong>Evidence:</strong> “Every run records prompts, model configuration, prediction, confidence, latency, errors, and historical output.”</li>
+    <li><strong>Learning:</strong> “The key lesson is that a detector alone is not enough; trusted-task enforcement provides a second defense layer when detection misses subtle attacks.”</li>
+  </ol>
+  <h3>Two-minute interview answer</h3>
+  <p class="quote">“My project focuses on prompt injection, where untrusted text or image content tries to control an AI system. I built a reproducible evaluation framework with attack and benign corpora, a deterministic undefended baseline, a defended agent pipeline, and model adapters for local and hosted LLMs. For images, it supports both OCR-style testing and actual image-byte evaluation. I also added CPU profiles so the experiments can run on ordinary laptops, and the system generates structured results and offline reports. The most important design decision was separating the trusted review task from untrusted content and measuring both detection and bypasses. I present it as a research prototype, not a guarantee of security, because documenting limitations is part of responsible AI engineering.”</p>
+  <h3>Likely questions and strong answers</h3>
+  <table>
+    <tr><th>Question</th><th>Answer direction</th></tr>
+    <tr><td>Why is this important?</td><td>LLM applications increasingly process external content, and that content can contain instructions that conflict with the trusted task.</td></tr>
+    <tr><td>Why use CPU tests?</td><td>They reduce cost, improve accessibility, and make the experiment easier for another researcher to reproduce.</td></tr>
+    <tr><td>How do you measure success?</td><td>Detection, bypass, accuracy, false positives, errors, confidence, latency, and per-sample evidence.</td></tr>
+    <tr><td>What are the limitations?</td><td>Corpus size, model dependence, static attacks, provider errors, and the fact that this is not a production guarantee.</td></tr>
+    <tr><td>What would you improve?</td><td>Add adaptive attacks, human review queues, larger multimodal corpora, statistical repetition, and stronger model-based detectors.</td></tr>
+  </table>
+  <div class="footer">AegisAI Project Portfolio | Interview method</div>
+</section>
+
+<section class="page">
+  <h2>7. Scholarship and Research Presentation</h2>
+  <h3>Scholarship motivation paragraph</h3>
+  <p class="quote">My project investigates a growing challenge in artificial intelligence: the ability of AI systems to distinguish trusted instructions from untrusted content. I designed a reproducible framework that tests prompt injections delivered through text, OCR transcripts, and images. The system compares undefended and defended AI-agent behavior, evaluates multiple local and hosted models, records measurable security outcomes, and produces transparent reports. The CPU-based workflow makes the research accessible on ordinary hardware, while documented limitations and preserved bypasses support honest, repeatable scientific analysis. This work has strengthened my interest in AI security, responsible machine learning, multimodal systems, and research that connects technical innovation with practical safety.</p>
+  <h3>Research contribution</h3>
+  <p>The contribution is not a claim that one detector solves prompt injection. The contribution is an experiment design: a trust-boundary model, a reusable attack taxonomy, paired defense conditions, low-cost reproduction, structured measurements, and explicit limitations.</p>
+  <h3>How to discuss European study goals</h3>
+  <ul>
+    <li>Connect the project to responsible AI, cybersecurity, trustworthy machine learning, and human-centered technology.</li>
+    <li>Explain that Europe’s research environment is attractive because it combines technical innovation with safety, privacy, governance, and societal impact.</li>
+    <li>Describe the next research step as adaptive and multimodal evaluation rather than promising a final solution.</li>
+    <li>Emphasize collaboration: the framework is designed so other researchers can reproduce, extend, and challenge the findings.</li>
+  </ul>
+  <h3>Three-minute scholarship presentation</h3>
+  <p>“I became interested in how AI systems handle information that looks like an instruction but is actually untrusted data. This led me to build AegisAI, a framework for testing prompt injections in text and images. I created a versioned corpus, simulated an undefended and defended agent, integrated multiple LLM providers, and designed CPU-based experiments that can be reproduced without expensive hardware. The system measures detection, bypass, accuracy, false positives, errors, confidence, and latency, then generates transparent reports. The project taught me that responsible AI research requires more than strong average results: it requires controlled experiments, clear trust boundaries, reproducibility, and honest reporting of failure cases. At university, I would extend this work toward adaptive attacks, multimodal security, human review, and statistically stronger evaluation.”</p>
+  <div class="footer">AegisAI Project Portfolio | Scholarship presentation</div>
+</section>
+
+<section class="page">
+  <h2>8. Development Roadmap</h2>
+  <table>
+    <tr><th>Stage</th><th>Planned improvement</th><th>Research value</th></tr>
+    <tr><td>1. Stronger evaluation</td><td>Repeat runs across more samples, models, and CPU profiles.</td><td>Improves confidence and exposes variance.</td></tr>
+    <tr><td>2. Adaptive attacks</td><td>Generate attack variants that respond to detector behavior.</td><td>Tests whether defenses generalize beyond known patterns.</td></tr>
+    <tr><td>3. Human review</td><td>Add a review queue for `hold` decisions.</td><td>Connects automated detection with human oversight.</td></tr>
+    <tr><td>4. Multimodal expansion</td><td>Add PDFs, screenshots, charts, QR codes, and hybrid text-image cases.</td><td>Reflects realistic AI application inputs.</td></tr>
+    <tr><td>5. Statistical reporting</td><td>Add confidence intervals, repeated trials, and experiment configuration manifests.</td><td>Strengthens academic and engineering conclusions.</td></tr>
+  </table>
+  <h3>Responsible-use statement</h3>
+  <p>This framework is for authorized research, education, and controlled security testing. Attack examples should not be connected to real external tools without isolation, authorization, logging, and human review. A bypass is a research finding, not a recommendation to deploy an unsafe agent.</p>
+  <h3>Final positioning</h3>
+  <p class="quote">AegisAI demonstrates the complete research loop: define a security problem, design controlled attacks, build a measurable defense boundary, compare models, preserve evidence, communicate limitations, and propose the next experiment.</p>
+  <p class="small">Portfolio source and technical documentation: <a href="https://github.com/zarbid62/text-image-attack-defence-framework">GitHub repository</a>.</p>
+  <div class="footer">AegisAI Project Portfolio | Roadmap and responsible use</div>
+</section>
+</main>
+</body>
+</html>
