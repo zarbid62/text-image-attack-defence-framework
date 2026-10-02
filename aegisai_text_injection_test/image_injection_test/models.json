@@ -1,0 +1,24 @@
+{
+  "selected_models": [],
+  "catalog": [
+    {"name": "Ollama Qwen 2.5 0.5B", "id": "ollama:qwen2.5:0.5b", "requires_api_key": false, "vision": false},
+    {"name": "Ollama Qwen 2.5 1.5B", "id": "ollama:qwen2.5:1.5b", "requires_api_key": false, "vision": false},
+    {"name": "Ollama Llama 3.2 1B", "id": "ollama:llama3.2:1b", "requires_api_key": false, "vision": false},
+    {"name": "Ollama LLaVA Vision 7B", "id": "ollama:llava", "requires_api_key": false, "vision": true, "download_size": "about 4.7 GB"},
+    {"name": "Ollama LLaVA Vision 13B", "id": "ollama:llava:13b", "requires_api_key": false, "vision": true, "download_size": "about 8.0 GB"},
+    {"name": "Ollama BakLLaVA", "id": "ollama:bakllava", "requires_api_key": false, "vision": true, "download_size": "about 4.7 GB"},
+    {"name": "Ollama Moondream", "id": "ollama:moondream", "requires_api_key": false, "vision": true, "download_size": "about 1.7 GB"},
+    {"name": "Ollama MiniCPM-V", "id": "ollama:minicpm-v", "requires_api_key": false, "vision": true, "download_size": "about 5.5 GB"},
+    {"name": "Ollama Llama 3.2 Vision 11B", "id": "ollama:llama3.2-vision:11b", "requires_api_key": false, "vision": true, "download_size": "about 7.9 GB"},
+    {"name": "Ollama Gemma 3 1B", "id": "ollama:gemma3:1b", "requires_api_key": false, "vision": false, "download_size": "about 815 MB"},
+    {"name": "Ollama Gemma 3 4B", "id": "ollama:gemma3:4b", "requires_api_key": false, "vision": true, "download_size": "about 3.3 GB"},
+    {"name": "Ollama Gemma 3 12B", "id": "ollama:gemma3:12b", "requires_api_key": false, "vision": true, "download_size": "about 8.1 GB"},
+    {"name": "Ollama Qwen 2.5 VL 3B", "id": "ollama:qwen2.5vl:3b", "requires_api_key": false, "vision": true, "download_size": "about 3.0 GB"},
+    {"name": "Ollama Qwen 2.5 VL 7B", "id": "ollama:qwen2.5vl:7b", "requires_api_key": false, "vision": true, "download_size": "about 6.0 GB"},
+      {"name": "Ollama Qwen 2.5 3B", "id": "ollama:qwen2.5:3b", "requires_api_key": false, "vision": false},
+    {"name": "OpenAI GPT-4o mini", "id": "openai:gpt-4o-mini", "requires_api_key": true},
+    {"name": "Anthropic Claude vision", "id": "anthropic:claude-3-5-sonnet-latest", "requires_api_key": true},
+    {"name": "Google Gemini Flash", "id": "gemini:gemini-2.0-flash", "requires_api_key": true},
+    {"name": "Hugging Face Qwen VL", "id": "hf:Qwen/Qwen2.5-VL-7B-Instruct", "requires_api_key": false}
+  ]
+}

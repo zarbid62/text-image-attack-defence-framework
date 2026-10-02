@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+
+# Generated reports and local run output
+results/*.csv
+results/*.json
+results/*.docx
+results/*.pptx
+results/*.html

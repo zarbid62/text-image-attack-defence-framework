@@ -1,0 +1,3 @@
+Pillow>=12.0
+svglib>=2.0
+rlPyCairo>=0.4

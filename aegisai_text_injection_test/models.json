@@ -1,0 +1,87 @@
+{
+  "selected_models": [
+    "ollama:qwen2.5:0.5b",
+    "ollama:qwen2.5:1.5b",
+    "ollama:llama3.2:1b"
+  ],
+  "catalog": [
+    {
+      "id": "ollama:qwen2.5:0.5b",
+      "name": "Qwen2.5 0.5B",
+      "kind": "local",
+      "requires_api_key": false
+    },
+    {
+      "id": "ollama:qwen2.5:1.5b",
+      "name": "Qwen2.5 1.5B",
+      "kind": "local",
+      "requires_api_key": false
+    },
+    {
+      "id": "ollama:llama3.2:1b",
+      "name": "LLaMA 3.2 1B",
+      "kind": "local",
+      "requires_api_key": false
+    },
+    {
+      "id": "ollama:gemma2:2b",
+      "name": "Gemma 2 2B",
+      "kind": "local",
+      "requires_api_key": false
+    },
+    {
+      "id": "ollama:phi3:mini",
+      "name": "Phi-3 Mini",
+      "kind": "local",
+      "requires_api_key": false
+    },
+    {
+      "id": "ollama:tinyllama",
+      "name": "TinyLLaMA 1.1B",
+      "kind": "local",
+      "requires_api_key": false
+    },
+    {
+      "id": "ollama:mistral:7b-instruct",
+      "name": "Mistral Instruct",
+      "kind": "local",
+      "requires_api_key": false
+    },
+    {
+      "id": "ollama:gpt4all-j",
+      "name": "GPT4All-J",
+      "kind": "local",
+      "requires_api_key": false
+    },
+    {
+      "id": "openai:gpt-4o",
+      "name": "GPT-4o",
+      "kind": "hosted",
+      "requires_api_key": true
+    },
+    {
+      "id": "openai:gpt-4o-mini",
+      "name": "GPT-4o mini",
+      "kind": "hosted",
+      "requires_api_key": true
+    },
+    {
+      "id": "gemini:gemini-2.0-flash",
+      "name": "Gemini 2.0 Flash",
+      "kind": "hosted",
+      "requires_api_key": true
+    },
+    {
+      "id": "anthropic:claude-3-5-haiku-latest",
+      "name": "Claude 3.5 Haiku",
+      "kind": "hosted",
+      "requires_api_key": true
+    },
+    {
+      "id": "hf:google/gemma-2-2b-it",
+      "name": "Gemma 2 2B (Hugging Face)",
+      "kind": "open-source",
+      "requires_api_key": false
+    }
+  ]
+}

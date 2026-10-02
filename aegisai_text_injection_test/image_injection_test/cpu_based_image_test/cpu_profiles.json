@@ -1,0 +1,28 @@
+{
+  "purpose": "CPU-only image prompt-injection testing profiles",
+  "profiles": {
+    "8gb": {
+      "recommended_model": "ollama:moondream",
+      "max_samples": 1,
+      "timeout_seconds": 300,
+      "gpu_setting": "OLLAMA_NUM_GPU=0",
+      "reason": "Safest option for an 8 GB computer without a GPU"
+    },
+    "16gb": {
+      "recommended_model": "ollama:qwen2.5vl:3b",
+      "max_samples": 2,
+      "timeout_seconds": 300,
+      "gpu_setting": "OLLAMA_NUM_GPU=0",
+      "reason": "Higher-capability CPU option with a small workload"
+    },
+    "more": {
+      "recommended_model": "ollama:llava",
+      "max_samples": 4,
+      "timeout_seconds": 600,
+      "gpu_setting": "OLLAMA_NUM_GPU=0",
+      "reason": "Larger CPU option; monitor memory and expect slow inference"
+    }
+  },
+  "default_defense": "layered_defense",
+  "history_directory": "results/history"
+}

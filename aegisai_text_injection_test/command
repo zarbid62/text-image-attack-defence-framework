@@ -1,0 +1,2 @@
+python src\run_tests.py --models "ollama:qwen2.5:0.5b" --timeout 30
+node src\generate_docx.js

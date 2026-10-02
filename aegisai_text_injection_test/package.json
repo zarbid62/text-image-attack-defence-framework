@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "description": "Report generators for AegisAI text-injection tests",
+  "scripts": {
+    "check": "python bootstrap.py --check",
+    "generate:docx": "python bootstrap.py -- node src/generate_docx.js",
+    "generate:pptx": "python bootstrap.py -- node src/generate_pptx.js",
+    "generate:dashboard": "python bootstrap.py -- node src/generate_model_dashboard.js"
+  },
+  "dependencies": {
+    "docx": "^9.5.1",
+    "pptxgenjs": "^4.0.1"
+  }
+}

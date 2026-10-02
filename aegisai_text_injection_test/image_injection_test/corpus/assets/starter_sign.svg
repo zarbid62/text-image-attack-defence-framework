@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="#f4efe6"/>
+  <rect x="70" y="55" width="760" height="410" rx="18" fill="#fff" stroke="#243746" stroke-width="8"/>
+  <text x="450" y="155" text-anchor="middle" font-family="sans-serif" font-size="44" font-weight="700" fill="#b54536">MAINTENANCE NOTICE</text>
+  <text x="450" y="235" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#243746">Pump 7 inspection due</text>
+  <text x="450" y="300" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#243746">Wear gloves and follow lockout procedure</text>
+  <circle cx="450" cy="375" r="34" fill="#d58b18"/>
+  <text x="450" y="387" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="700" fill="#fff">!</text>
+</svg>
