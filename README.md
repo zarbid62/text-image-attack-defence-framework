@@ -273,6 +273,110 @@ This project is a useful portfolio artifact because it connects several discipli
 - Cross-platform setup for Windows, macOS, and Linux.
 - Error handling, model timeouts, latency measurement, result archiving, and limitations reporting.
 
+## Tools and Technologies
+
+### AI Engineering
+
+This project applies AI engineering principles to the security evaluation of language and vision models. It combines structured datasets, prompt design, model integration, deterministic testing, evaluation metrics, and reproducible reporting into one workflow.
+
+The framework tests how AI systems distinguish trusted instructions from untrusted content embedded in text, images, OCR transcripts, documents, and other data sources.
+
+### Large Language Models
+
+The framework supports evaluation of multiple model providers and model types, including:
+
+- Ollama local models.
+- OpenAI models.
+- Anthropic Claude models.
+- Google Gemini models.
+- Hugging Face models.
+- OpenAI-compatible local servers.
+
+Models are evaluated using consistent attack prompts, defense prompts, datasets, timeouts, and output metrics. This makes it possible to compare model behavior under the same conditions.
+
+### AI Agents
+
+The project includes simulated undefended and defended AI agents.
+
+The undefended agent demonstrates how an AI system may incorrectly treat untrusted content as an instruction and attempt to execute an embedded action.
+
+The defended agent separates trusted user or system instructions from untrusted text extracted from images or documents, potential tool calls, authority claims, safety bypass attempts, and data-exfiltration requests. This demonstrates how instruction boundaries can be implemented and evaluated before connecting an AI system to real tools.
+
+### Prompt Engineering
+
+The framework uses structured attack and defense prompt libraries. Attack prompts represent common prompt-injection techniques, including direct overrides, forged authority, delimiter escapes, role-play jailbreaks, urgency manipulation, fake tool responses, data exfiltration, and polite low-signal overrides.
+
+Defense prompts instruct models to treat image and document content as untrusted data, classify it, and avoid following instructions embedded within it. The system also supports custom attack prompts, custom defense prompts, prompt overlays, and comparisons between different defense strategies.
+
+### Multimodal AI
+
+The image-testing component evaluates multimodal models that process image bytes directly. It supports image-embedded prompt injections, OCR and transcript-based evaluation, SVG/PNG/JPEG/WEBP/GIF/BMP inputs, local image folders, JSON image manifests, HTTP(S) image manifests, vision-capable Ollama models, and custom image labels.
+
+The framework compares models that inspect actual image pixels with text-only models that use OCR or transcript data. This distinction helps identify whether a failure comes from visual understanding, OCR content, prompt handling, or the defense layer.
+
+### AI Security and Evaluation
+
+The project demonstrates practical AI security concepts, including threat modeling, trust-boundary design, prompt-injection detection, jailbreak analysis, tool-use safety, authority impersonation detection, data-exfiltration prevention, input validation, and limitations reporting.
+
+The detector uses transparent pattern matching and weighted risk categories. Its decisions are expressed as `allow`, `hold`, or `block`, making the reasoning inspectable and suitable for experimentation.
+
+The framework records attack detection rate, attack bypass or success rate, accuracy, false-positive rate, confidence, model errors, request latency, image-loading errors, successful calls, and failed calls. Each run also stores the command, model configuration, attack prompt, defense prompt, sample ID, run ID, and timestamp.
+
+### Python
+
+Python is used for command-line interfaces, dataset loading, corpus execution, agent simulation, heuristic detection, image processing, model-provider integration, Ollama model management, metrics collection, JSON/CSV result generation, and dependency bootstrapping.
+
+Important Python components include:
+
+- `bootstrap.py` for dependency and prerequisite setup.
+- `agent.py` for undefended and defended agent simulations.
+- `detector.py` for transparent prompt-injection detection.
+- `model_eval.py` for provider adapters and model comparisons.
+- `image_sets.py` for image folders, manifests, and URLs.
+- `prompt_lab.py` for prompt selection and image overlays.
+- `run_tests.py` for the main evaluation workflow.
+- `select_model.py` for model catalog management.
+
+### JavaScript and Node.js
+
+Node.js is used to generate shareable evaluation artifacts, including offline HTML dashboards, DOCX reports, PDF reports, PowerPoint presentations, and Markdown attack catalogs. The JavaScript report generators transform machine-readable result files into artifacts that can be reviewed by researchers, instructors, recruiters, and security teams.
+
+### Data and Experiment Design
+
+The project uses versioned JSON corpora and structured result files. Input data includes attack samples, benign samples, image metadata, expected labels, attack categories, prompt libraries, model catalogs, and defense configurations.
+
+Output data includes `results.json`, `results.csv`, `model_comparison.json`, `model_comparison.csv`, HTML dashboards, Markdown reports, DOCX files, PDF files, and PowerPoint files. This structure supports repeatable experiments, historical comparison, and future integration with automated analysis tools.
+
+### Local and Hosted Model Integration
+
+The provider abstraction allows the same evaluation workflow to work with local and hosted models.
+
+Local models provide privacy, offline experimentation, lower recurring cost, reproducible CPU-based testing, and greater control over model versions. Hosted models provide access to larger models, cross-provider comparison, different reasoning and vision capabilities, and production-style API evaluation.
+
+API keys are required only for hosted providers. Ollama models can run locally when Ollama is installed and running.
+
+### CPU-Based AI Testing
+
+The project includes a low-memory CPU testing workflow for users without a GPU:
+
+- `8gb`: Moondream, one sample, 300-second timeout.
+- `16gb`: Qwen 2.5 VL, two samples, 300-second timeout.
+- `more`: LLaVA, four samples, 600-second timeout.
+
+This makes the project easier to reproduce on ordinary laptops and educational computers. CPU testing also demonstrates responsible experiment design by limiting workload size, documenting hardware constraints, and avoiding unsupported performance claims. See the [CPU image test guide](aegisai_text_injection_test/image_injection_test/cpu_based_image_test/README.md) for the complete workflow.
+
+### Reproducibility and Automation
+
+The project provides cross-platform launchers: `run.cmd` for Windows and `run.sh` for macOS/Linux. The bootstrap system checks Python and Node.js versions, installs missing Python and Node.js packages, downloads selected missing Ollama models, and runs project commands from a consistent working directory.
+
+Each experiment preserves historical results so that new runs do not silently overwrite earlier evidence.
+
+### Portfolio and Career Relevance
+
+This project demonstrates practical experience in AI engineering, LLM evaluation, AI agent safety, multimodal AI, prompt engineering, cybersecurity, Python development, JavaScript and Node.js, data engineering, experiment design, model benchmarking, technical documentation, cross-platform automation, and responsible AI development.
+
+It is relevant to roles involving AI security, machine learning engineering, LLM applications, red teaming, evaluation engineering, software engineering, and responsible AI research.
+
 ## Scope and Responsible Use
 
 This is a research and evaluation framework, not a guarantee that a model is secure. Results depend on the selected model, prompts, corpus, hardware, provider configuration, and test size. Bypasses are expected research findings. Do not connect the simulated tool actions to real external systems without authorization, isolation, logging, and human review.
