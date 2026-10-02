@@ -61,25 +61,16 @@ npm --version
 
 Use Python 3.10 or newer and Node.js 18 or newer.
 
-### 2.2 Install Python image support
+### 2.2 Automatic dependency setup
 
-Pillow is used when attack text must be rendered into PNG, JPEG, WEBP, GIF, or BMP images.
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-### 2.3 Install JavaScript report dependencies
-
-The Node dependencies are stored in the parent text-test project. Run npm from the parent project root:
+The project launcher installs missing Python image packages and JavaScript report packages automatically. From the parent project root, run:
 
 ```powershell
 cd ..
-npm install
-cd image_injection_test
+python bootstrap.py -- python image_injection_test/src/run_tests.py
 ```
 
-The report generator uses `docx` for Word files and `pptxgenjs` for PowerPoint files. The PDF and HTML files are generated directly by the report script.
+The report generator uses `docx` for Word files and `pptxgenjs` for PowerPoint files. The PDF and HTML files are generated directly by the report script. Selected missing Ollama models are downloaded automatically during evaluations; use `--no-download` for offline runs.
 
 ### 2.4 Install and start Ollama
 

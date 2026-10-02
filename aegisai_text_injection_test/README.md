@@ -67,23 +67,17 @@ Open PowerShell in the project root, the folder containing `src`, `models.json`,
 cd "E:\path\to\aegisai_text_injection_test"
 ```
 
-Install the Node dependency used by the DOCX generator:
-
-```powershell
-npm install
-```
-
-The Python evaluation scripts use only the standard library, so no `pip install` command is required.
-
 ### First-run setup
 
-Use the project launcher for commands that need Node.js. It checks the local prerequisites and asks for permission before installing missing Node packages:
+Use the project launcher for every command. It automatically installs missing Python image packages and JavaScript packages before running the command:
 
 ```text
 python bootstrap.py --check
 python bootstrap.py -- python src/run_tests.py
 python bootstrap.py -- node src/generate_docx.js
 ```
+
+The root-level `run.cmd` and `run.sh` wrappers call the same launcher after a clone. Selected missing Ollama models are downloaded automatically during model evaluations; use `--no-download` when an offline run should fail instead.
 
 On Windows, `run.cmd node src/generate_docx.js` or `run.ps1 node src/generate_docx.js` can be used. On macOS and Linux, use `./run.sh node src/generate_docx.js`. The same wrapper works for any command; Python itself must already be installed because it runs the checker.
 

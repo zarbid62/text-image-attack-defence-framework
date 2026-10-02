@@ -9,7 +9,7 @@ This is the short, command-focused guide for `image_injection_test`. The longer 
 - The same command can compare both kinds of model. Text-only models use OCR fallback; vision models inspect the image.
 - The runner also executes the deterministic baseline and automatically generates comparison reports when `--models` is supplied.
 
-## 1. Install everything once
+## 1. Run through the project launcher
 
 Open PowerShell in this directory:
 
@@ -18,9 +18,8 @@ cd "E:\download folder\download 3\aegisai_text_injection_test\aegisai_text_injec
 python --version       # Python 3.10+
 node --version         # Node.js 18+
 ollama --version
-python -m pip install -r requirements.txt
 cd ..
-npm install
+python bootstrap.py -- python image_injection_test/src/run_tests.py --check
 cd image_injection_test
 ```
 
@@ -30,7 +29,7 @@ Install Ollama from [ollama.com](https://ollama.com), start it, and confirm that
 ollama list
 ```
 
-Download a text-only model and a vision model:
+When a selected Ollama model is missing, the test runner downloads it automatically. Use `--no-download` for offline runs. The manual pulls below are optional:
 
 ```powershell
 ollama pull qwen2.5:1.5b

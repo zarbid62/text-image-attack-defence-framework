@@ -1,6 +1,7 @@
-"""Check local prerequisites, request permission to install packages, then run a command."""
+"""Install missing local dependencies, check prerequisites, then run a command."""
 
 import argparse
+import os
 import shutil
 import subprocess
 import sys
@@ -36,15 +37,47 @@ def ask_permission(message):
     return answer in {"y", "yes"}
 
 
+def install_requirements(requirements_path):
+    if not requirements_path.exists():
+        return True
+    pip = [sys.executable, "-m", "pip", "install", "-r", str(requirements_path)]
+    environment = os.environ.copy()
+    environment["PIP_DISABLE_PIP_VERSION_CHECK"] = "1"
+    print(f"Installing missing Python packages from {requirements_path.relative_to(ROOT)}...")
+    return subprocess.run(pip, cwd=ROOT, env=environment, check=False).returncode == 0
+
+
+def ensure_python_dependencies():
+    requirements = ROOT / "image_injection_test" / "requirements.txt"
+    try:
+        import importlib.metadata
+
+        missing = []
+        with requirements.open(encoding="utf-8") as file:
+            for line in file:
+                requirement = line.partition("#")[0].strip()
+                if requirement:
+                    package_name = requirement.split("[", 1)[0].split("=", 1)[0].split(">", 1)[0].split("<", 1)[0].strip()
+                    try:
+                        importlib.metadata.version(package_name)
+                    except importlib.metadata.PackageNotFoundError:
+                        missing.append(package_name)
+        if not missing:
+            return True
+    except (OSError, ValueError):
+        return install_requirements(requirements)
+    return install_requirements(requirements)
+
+
 def ensure_node_dependencies():
     if not (ROOT / "package.json").exists() or (ROOT / "node_modules").exists():
         return True
     if not shutil.which("npm"):
         print("npm is required but was not found on PATH.", file=sys.stderr)
         return False
-    if not ask_permission("Node packages are missing. Run 'npm ci' now?"):
-        return False
-    return subprocess.run(["npm", "ci"], cwd=ROOT, check=False).returncode == 0
+    command = "ci" if (ROOT / "package-lock.json").exists() else "install"
+    print(f"Installing missing Node packages with 'npm {command}'...")
+    return subprocess.run(["npm", command], cwd=ROOT, check=False).returncode == 0
 
 
 def check_prerequisites(command):
@@ -54,6 +87,9 @@ def check_prerequisites(command):
             f"found {sys.version.split()[0]}.",
             file=sys.stderr,
         )
+        return False
+
+    if not ensure_python_dependencies():
         return False
 
     executable = Path(command[0]).name.lower() if command else ""

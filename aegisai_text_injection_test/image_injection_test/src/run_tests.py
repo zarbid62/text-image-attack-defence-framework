@@ -123,7 +123,8 @@ def main():
     parser.add_argument("--combined-vision-test", action="store_true",
                         help="Run a short test using one image containing all predefined attack types plus one benign image")
     parser.add_argument("--timeout", type=int, default=60)
-    parser.add_argument("--yes-download", action="store_true")
+    parser.add_argument("--yes-download", action="store_true", help="Allow missing selected Ollama models to download (enabled by default)")
+    parser.add_argument("--no-download", action="store_true", help="Fail instead of downloading missing selected Ollama models")
     parser.add_argument("--ocr-fallback", action="store_true",
                         help="Evaluate text-only models using the corpus OCR transcript instead of image bytes")
     parser.add_argument("--prompts-file", default=PROMPTS_PATH, help="JSON file containing attack and defense prompt libraries")
@@ -210,7 +211,7 @@ def main():
         with open(MODELS_PATH, encoding="utf-8") as file:
             specs = json.load(file).get("selected_models", [])
     if specs:
-        ensure_ollama_models(specs, args.yes_download)
+        ensure_ollama_models(specs, args.yes_download or not args.no_download)
     for attack_index, attack_prompt_id in enumerate(attack_prompt_ids):
         samples = load_samples(corpus, args.image_set, args.prompt)
         if args.max_samples is not None:
