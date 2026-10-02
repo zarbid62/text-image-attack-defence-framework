@@ -10,7 +10,7 @@ This folder contains the low-memory workflow for image prompt-injection testing 
 | `16gb` | `ollama:qwen2.5vl:3b` | 2 | 300 seconds | Better capability with a small CPU workload |
 | `more` | `ollama:llava` | 4 | 600 seconds | Larger CPU test; monitor memory and expect slow inference |
 
-The profile controls the recommended model, default sample limit, and timeout. It does not download a model automatically unless `--yes-download` is supplied.
+The profile controls the recommended model, default sample limit, and timeout. Missing selected Ollama models download automatically during evaluation; use `--no-download` for offline runs.
 
 ## Setup
 
@@ -19,7 +19,6 @@ Run these commands from the `image_injection_test` directory:
 ```powershell
 ollama --version
 ollama list
-ollama pull moondream
 ```
 
 For an 8 GB machine, do not start with `llava`, `minicpm-v`, or 7B/12B vision models.
@@ -75,7 +74,7 @@ Generated reports include:
 
 ## Troubleshooting
 
-- If a model is missing, run `ollama pull <model>` or add `--yes-download`.
+- If a model is missing, the runner downloads it automatically; use `--no-download` to fail fast instead.
 - If memory is tight, use `--cpu-profile 8gb --max-samples 1`.
 - If inference is slow, keep one model, one image, and a timeout of at least 300 seconds.
 - If an image request fails, confirm that the selected model is vision-capable.
